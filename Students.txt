@@ -1,0 +1,13 @@
+class StudentsVector
+contains the following fields:
+- Vector of Student objects
+contains the following  public methods:
+- addStudent(Student s) - adds a student to the vector, or return error code
+- getStudent(int i) - returns the student at index i
+- getStudent(String pesel) - returns the student with the given pesel
+- getStudent(int index) - returns the student with the given index
+- getNumStudents() - returns the number of students in the array
+
+class StudentsArray has those contstructors:
+- StudentsArray() - creates an empty array
+- StudentsArray(int size) - creates an array of the given size
