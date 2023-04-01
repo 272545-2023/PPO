@@ -1,39 +1,47 @@
 #include <iostream>
 #include <vector>
-#include "Student.h"
 #include "Students.h"
 
 using namespace std;
 
-// // Print all students in the vector
-// void printStudents(vector<Student> students)
-// {
-//     for (Student s : students)
-//         cout << s.getName() << " " << s.getSurname() << " " << s.getIndex() << " " << s.getPesel() << endl;
-// }
-// // Add a student to the vector
-// void addStudent(vector<Student> *students)
-// {
-//     Student student;
-//     string name, surname, pesel;
-//     int index;
-//     cout << "Enter name: ";
-//     cin >> name;
-//     student.setName(name);
-//     cout << "Enter surname: ";
-//     cin >> surname;
-//     student.setSurname(surname);
-//     cout << "Enter index: ";
-//     cin >> index;
-//     student.setIndex(index);
-//     cout << "Enter pesel: ";
-//     cin >> pesel;
-//     int code = student.setPesel(pesel);
-//     if (code != 0)
-//     {
-//         cout << "Incorrect pesel!" << endl;
-//         cout << "Please try again!" << endl;
-//         return;
-//     }
-//     students.push_back(student);
-// }
+int StudentsVector::addStudent(Student s)
+{   
+    try {
+        students.push_back(s);
+    }
+    catch (const char* msg) {
+        cerr << msg << endl;
+        return 1;
+    }
+    return 0;
+}
+
+Student StudentsVector::getStudent(string pesel)
+{
+    for (int i = 0; i < students.size(); i++)
+    {
+        if (students[i].getPesel() == pesel)
+            return students[i];
+    }
+    return Student();
+}
+
+Student StudentsVector::getStudent(int index)
+{   
+    if (index < students.size() && index >= 0)
+        return students[index];
+
+    for (int i = 0; i < students.size(); i++)
+    {
+        if (students[i].getIndex() == index)
+            return students[i];
+    }
+    return Student();
+
+}
+
+int StudentsVector::getNumStudents()
+{
+    return students.size();
+}
+
