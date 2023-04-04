@@ -1,0 +1,94 @@
+Class Person:
+private:
+    - name: string
+    - surname: string
+    - pesel: string
+    - age: int
+    + checkPesel(pesel: string): int
+    + void setAge(age: int): void
+
+public:
+    + Person(name: string, surname: string, pesel: string, age: int)
+    + getName(): string
+    + getSurname(): string
+    + getPesel(): string
+    + getAge(): int
+    + setName(name: string): void
+    + setSurname(surname: string): void
+    + setPesel(pesel: string): void
+    + setAge(age: int): void
+
+
+___________________________________________________________
+
+class Student extends Person:
+private:
+    - index: string
+
+public:
+    + getIndex(): string
+    + setIndex(index: string): void
+
+___________________________________________________________
+
+class Employee extends Person:
+private:
+    - cardNumber: string
+    - position: string
+
+public:
+    + getCardNumber(): string
+    + getPosition(): string
+    + setCardNumber(cardNumber: string): void
+    + setPosition(position: string): void
+
+___________________________________________________________
+
+class PersonVector:
+private:
+    - vector: Persons<Person>
+
+public:
+    + addPerson(person: Person): void
+    + getPersonCount(): int
+    + removePerson(index: int): void
+    + removePerson(person: Person): void
+    + getPersonByIndex(index: int): Person
+    + getPersonByName(name: string): Person
+    + getPersonBySurname(surname: string): Person
+    + getPersonByAge(age: int): Person
+    + getPersonByPesel(pesel: string): Person
+
+___________________________________________________________
+
+class StudentVector extends PersonVector:
+private:
+    - vector: Persons<Student>
+
+public:
+    + StudentVector()
+    + getStudentByIndex(index: string): Student
+
+___________________________________________________________
+
+class EmployeeVector extends PersonVector:
+private:
+    - vector: Persons<Employee>
+
+public:
+    + EmployeeVector()
+    + getEmployeeByCardNumber(cardNumber: string): Employee
+    + getEmployeeByPosition(position: string): Employee
+
+___________________________________________________________
+
+class ui:
+public:
+    + void ui(): void
+    + void showStudentVectorMenu(): void
+    + void handleStudentVectorChoice(int): void
+    + void showEmployeeVectorMenu(): void
+    + void handleEmployeeVectorChoice(int): void
+    + void handleChoice(): void
+
+ 
