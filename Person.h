@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Identifiable.h"
+
+using namespace std;
 
 class Person
 {
@@ -79,4 +82,18 @@ public:
         *
     */
     int setPesel(std::string pesel);
+
+    /*
+        * Method to get the type of the person
+        * @return type of the person
+        *
+    */
+   virtual std::string getType();
+
+    /*
+        * Method to get the id of the person
+        * @return id of the person
+        *
+    */
+    virtual std::string getId();
 };

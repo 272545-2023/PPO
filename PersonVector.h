@@ -26,7 +26,7 @@ class PersonVector
          * Method to remove a person from the vector
          * @param int index of the person in the vector
          */
-        void removePersonByIndex(int index);
+        void removePersonById(int Id);
 
         /*
          * Method to remove a person from the vector
@@ -39,7 +39,7 @@ class PersonVector
          * @param int index of the person in the vector
          * @return Person person from the vector
          */
-        Person getPersonByIndex(int index);
+        virtual Person getPersonById(int index);
 
 
         /*
@@ -47,26 +47,27 @@ class PersonVector
          * @param std::string name of the person
          * @return Person person from the vector
          */
-        std::string getPersonByName(std::string name);
+        virtual Person getPersonByName(std::string name);
 
         /*
          * Method to get a person from the vector
          * @param std::string surname of the person
          * @return Person person from the vector
          */
-        std::string getPersonBySurname(std::string surname);
+        virtual Person getPersonBySurname(std::string surname);
 
         /*
          * Method to get a person from the vector
          * @param std::string pesel of the person
          * @return Person person from the vector
          */
-        std::string getPersonByPesel(std::string pesel);
+        virtual Person getPersonByPesel(std::string pesel);
 
         /*
          * Method to get a person from the vector
          * @param int age of the person
          * @return Person person from the vector
          */
-        std::string getPersonByAge(int age);
+        Person getPersonByAge(int age);
+        
 };

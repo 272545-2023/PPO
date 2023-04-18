@@ -1,11 +1,11 @@
 #include "ui.h"
-#include "Students.h"
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-StudentsVector students;
+StudentVector students;
+EmployeeVector employees;
 
 int main()
 {

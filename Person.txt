@@ -51,9 +51,9 @@ private:
 public:
     + addPerson(person: Person): void
     + getPersonCount(): int
-    + removePerson(index: int): void
-    + removePerson(person: Person): void
-    + getPersonByIndex(index: int): Person
+    + getPersonById(id: int): Person
+    + removePersonById(id: int): void
+    + removePerson(Person person): void
     + getPersonByName(name: string): Person
     + getPersonBySurname(surname: string): Person
     + getPersonByAge(age: int): Person
@@ -66,8 +66,8 @@ private:
     - vector: Persons<Student>
 
 public:
-    + StudentVector()
     + getStudentByIndex(index: string): Student
+    + removeStudentByIndex(index: string): void
 
 ___________________________________________________________
 
@@ -76,9 +76,9 @@ private:
     - vector: Persons<Employee>
 
 public:
-    + EmployeeVector()
     + getEmployeeByCardNumber(cardNumber: string): Employee
     + getEmployeeByPosition(position: string): Employee
+    + removeEmployeeByCardNumber(cardNumber: string): void
 
 ___________________________________________________________
 

@@ -1,20 +1,34 @@
 #include "Person.h"
 
-class Student : public Person
+class Student : public Person, public Identifiable
 {
 private:
-    int index;
+    std::string index;
+    std::string type = "Student";
+    std::string id = index;
 
 public:
     /*
      * Method to get the index of the student
-     * @return _int_ index of the student
+     * @return string index of the student
      */
-    int getIndex();
+    std::string getIndex();
 
     /*
      * Method to set the index of the student
      * @param int age of the student
      */
     void setIndex(int index);
+
+    /*
+     * Method to get the type of the student
+     * @return std::string type of the student
+     */
+    std::string getType();
+
+    /*
+     * Method to get the id of the student
+     * @return std::string id of the student
+     */
+    std::string getId();
 };

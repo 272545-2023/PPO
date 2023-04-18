@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Student.h"
 
-int Student::getIndex()
+std::string Student::getIndex()
 {
     return index;
 }
