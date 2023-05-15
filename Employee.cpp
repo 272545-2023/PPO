@@ -19,3 +19,18 @@ void Employee::setPosition(std::string position)
 {
     this->position = position;
 }
+
+std::string Employee::getType()
+{
+    return type;
+}
+
+std::string Employee::getId()
+{
+    return id;
+}
+
+std::string Employee::toString()
+{
+    return "Employee:\nName=" + getName() + "\nSurname=" + getSurname() + "\nAge=" + std::to_string(getAge()) + "\nPesel=" +getPesel() + "\nCard_number=" + getCardNumber() + "\nPosition=" + getPosition();
+}

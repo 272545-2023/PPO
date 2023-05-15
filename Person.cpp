@@ -58,3 +58,12 @@ int Person::setPesel(std::string pesel)
         std::cout << "Wrong pesel" << std::endl;
     return check;
 }
+
+std::string Person::toString()
+{
+    return "Person:Name=" + name + "\nSurname=" + surname + "\nPesel=" + pesel + "\nAge=" + std::to_string(age);
+}
+
+Person::~Person()
+{
+}

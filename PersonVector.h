@@ -23,6 +23,20 @@ class PersonVector
         int getPersonCount();
 
         /*
+         * Method to get the number of students in the vector
+         * @return int number of students in the vector
+         */
+        int getStudentCount();
+
+
+        /*
+         * Method to get the number of employees in the vector
+         * @return int number of employees in the vector
+         */
+        int getEmployeeCount();
+
+
+        /*
          * Method to remove a person from the vector
          * @param int index of the person in the vector
          */
@@ -39,7 +53,7 @@ class PersonVector
          * @param int index of the person in the vector
          * @return Person person from the vector
          */
-        virtual Person getPersonById(int index);
+        Person getPersonById(int index);
 
 
         /*
@@ -47,27 +61,21 @@ class PersonVector
          * @param std::string name of the person
          * @return Person person from the vector
          */
-        virtual Person getPersonByName(std::string name);
+        Person getPersonByName(std::string name);
 
         /*
          * Method to get a person from the vector
          * @param std::string surname of the person
          * @return Person person from the vector
          */
-        virtual Person getPersonBySurname(std::string surname);
+        Person getPersonBySurname(std::string surname);
 
         /*
          * Method to get a person from the vector
          * @param std::string pesel of the person
          * @return Person person from the vector
          */
-        virtual Person getPersonByPesel(std::string pesel);
+        Person getPersonByPesel(std::string pesel);
 
-        /*
-         * Method to get a person from the vector
-         * @param int age of the person
-         * @return Person person from the vector
-         */
-        Person getPersonByAge(int age);
-        
+        ~PersonVector();
 };

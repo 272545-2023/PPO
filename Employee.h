@@ -44,4 +44,10 @@ public:
      * @return std::string id of the employee
      */
     std::string getId();
+
+    /*
+     * Method to get the string representation of the employee
+     * @return std::string string representation of the employee
+     */
+    std::string toString();
 };

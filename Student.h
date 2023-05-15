@@ -31,4 +31,11 @@ public:
      * @return std::string id of the student
      */
     std::string getId();
+
+
+    /*
+     * Method to get the string representation of the student
+     * @return std::string string representation of the student
+     */
+    std::string toString();
 };

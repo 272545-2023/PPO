@@ -10,6 +10,32 @@ int PersonVector::getPersonCount()
     return personVector.size();
 }
 
+int PersonVector::getStudentCount()
+{
+    int studentCount = 0;
+    for (int i = 0; i < personVector.size(); i++)
+    {
+        if (personVector[i].getType() == "Student")
+        {
+            studentCount++;
+        }
+    }
+    return studentCount;
+}
+
+int PersonVector::getEmployeeCount()
+{
+    int employeeCount = 0;
+    for (int i = 0; i < personVector.size(); i++)
+    {
+        if (personVector[i].getType() == "Employee")
+        {
+            employeeCount++;
+        }
+    }
+    return employeeCount;
+}
+
 Person PersonVector::getPersonById(int index)
 {
     return personVector[index];
@@ -33,44 +59,43 @@ void PersonVector::removePerson(Person person)
 
 Person PersonVector::getPersonByName(std::string name)
 {
+    Person person;
     for (int i = 0; i < personVector.size(); i++)
     {
         if (personVector[i].getName() == name)
         {
-            return personVector[i];
+            person = personVector[i];
         }
     }
+    return person;
 }
 
 Person PersonVector::getPersonBySurname(std::string surname)
 {
+    Person person;
     for (int i = 0; i < personVector.size(); i++)
     {
         if (personVector[i].getSurname() == surname)
         {
-            return personVector[i];
+            person = personVector[i];
         }
     }
+    return person;
 }
 
 Person PersonVector::getPersonByPesel(std::string pesel)
 {
+    Person person;
     for (int i = 0; i < personVector.size(); i++)
     {
         if (personVector[i].getPesel() == pesel)
         {
-            return personVector[i];
+            person = personVector[i];
         }
     }
+    return person;
 }
 
-Person PersonVector::getPersonByAge(int age)
+PersonVector::~PersonVector()
 {
-    for (int i = 0; i < personVector.size(); i++)
-    {
-        if (personVector[i].getAge() == age)
-        {
-            return personVector[i];
-        }
-    }
 }

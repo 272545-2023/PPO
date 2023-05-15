@@ -1,3 +1,6 @@
+#ifndef PERSON_H
+#define PERSON_H
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -96,4 +99,18 @@ public:
         *
     */
     virtual std::string getId();
+
+    /*
+        * Method to get the string representation of the person
+        * @return string representation of the person
+        *
+    */
+    virtual std::string toString();
+
+    /*
+        Destructor
+    */
+    virtual ~Person();
 };
+
+#endif
