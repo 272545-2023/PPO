@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Person.h"
 #include <vector>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -77,5 +79,13 @@ class PersonVector
          */
         Person getPersonByPesel(std::string pesel);
 
-        ~PersonVector();
+        //save to file
+        void saveToFile();
+
+        //load from file
+        void loadFromFile();
+
+        void printAll();
+
+
 };

@@ -23,5 +23,5 @@ std::string Student::getId()
 
 std::string Student::toString()
 {
-    return "Student:\nName=" + getName() + "\nSurname=" + getSurname() + "\nAge=" + std::to_string(getAge()) + "\nPesel=" + getPesel() + "\nIndex=" + getIndex() + "\n";
+    return "Student:Name=" + getName() + ",Surname=" + getSurname() + ",Pesel=" + getPesel()  + ",Age=" + std::to_string(getAge())  + ",Index=" + getIndex();
 }

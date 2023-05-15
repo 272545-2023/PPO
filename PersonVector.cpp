@@ -96,6 +96,53 @@ Person PersonVector::getPersonByPesel(std::string pesel)
     return person;
 }
 
-PersonVector::~PersonVector()
+void PersonVector::printAll()
 {
+    for (int i = 0; i < personVector.size(); i++)
+    {
+        std::cout << personVector[i].toString() << std::endl;
+    }
 }
+
+void PersonVector::saveToFile()
+{
+    std::ofstream file;
+    file.open("data.txt");
+    for (int i = 0; i < personVector.size(); i++)
+    {
+        file << personVector[i].toString() << std::endl;
+    }
+    file.close();
+}
+
+void PersonVector::loadFromFile()
+{
+    std::ifstream file;
+    file.open("data.txt");
+    std::string line;
+    while (std::getline(file, line))
+    {
+        Person person;
+        stringstream ss(line);
+        string name, surname, pesel;
+        ss.ignore(12); // Ignoruj "Person:Name="
+
+        getline(ss, name, ',');
+
+        ss.ignore(9); // Ignoruj "Surname="
+
+        getline(ss, surname, ',');
+
+        ss.ignore(6); // Ignoruj "Pesel="
+
+        getline(ss, pesel, ',');
+
+        // Ustaw wartości w obiekcie Person
+        person.setName(name);
+        person.setSurname(surname);
+        person.setPesel(pesel);
+        personVector.push_back(person);
+    }
+    file.close();
+}
+

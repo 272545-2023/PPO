@@ -14,6 +14,8 @@ protected:
     std::string name;
     std::string surname;
     std::string pesel;
+    std::string type;
+    std::string id;
     int age;
 
     /*
@@ -106,11 +108,6 @@ public:
         *
     */
     virtual std::string toString();
-
-    /*
-        Destructor
-    */
-    virtual ~Person();
 };
 
 #endif

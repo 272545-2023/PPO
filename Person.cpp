@@ -15,7 +15,17 @@ int Person::checkPesel(std::string pesel)
 
 void Person::setAge(std::string pesel)
 {
-    this->age = 2020 - (1900 + (pesel[0] - '0') * 10 + (pesel[1] - '0'));
+    std::string rokStr = pesel.substr(0, 2);
+    int rok = stoi(rokStr);
+    int wiek = 0;
+    int pierwszaCyfra = pesel[2] - '0';
+    if (pierwszaCyfra >= 0 && pierwszaCyfra <= 1) {
+        wiek = 1900 + rok;
+    } else {
+        wiek = 2000 + rok;
+    }
+    wiek = 2023-wiek;
+    this->age = wiek;
 }
 
 std::string Person::getName()
@@ -59,11 +69,17 @@ int Person::setPesel(std::string pesel)
     return check;
 }
 
-std::string Person::toString()
+std::string Person::getType()
 {
-    return "Person:Name=" + name + "\nSurname=" + surname + "\nPesel=" + pesel + "\nAge=" + std::to_string(age);
+    return type;
 }
 
-Person::~Person()
+std::string Person::getId()
 {
+    return pesel;
+}
+
+std::string Person::toString()
+{
+    return "Person:Name=" + name + ",Surname=" + surname + ",Pesel=" + pesel + ",Age=" + std::to_string(age);
 }

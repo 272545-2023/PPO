@@ -101,7 +101,9 @@ int main()
         cout << endl << "__MENU__" << endl;
         cout << "1. Student menu" << endl;
         cout << "2. Employee menu" << endl;
-        cout << "3. Exit" << endl;
+        cout << "3. Save to file" << endl;
+        cout << "4. Load from file" << endl;
+        cout << "5. Exit" << endl;
         int choice;
         cin >> choice;
         Person p;
@@ -116,6 +118,7 @@ int main()
                     case 1:
                         p = addStudent();
                         people.addPerson(p);
+                        people.printAll();
                         break;
                     case 2:
                         cout << "Index: ";
@@ -140,6 +143,7 @@ int main()
                     case 1:
                         p = addEmployee();
                         people.addPerson(p);
+                        people.printAll();
                         break;
                     case 2:
                         cout << "Index: ";
@@ -154,6 +158,19 @@ int main()
                         cout << "Invalid choice" << endl;
                         break;
                 }
+            case 3:
+                people.saveToFile();
+                break;
+            case 4:
+                people.loadFromFile();
+                break;
+            case 5:
+                exit = true;
+                break;
+            default:
+                cout << "Invalid choice" << endl;
+                break;
+            
 
         }
     }

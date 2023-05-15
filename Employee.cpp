@@ -32,5 +32,5 @@ std::string Employee::getId()
 
 std::string Employee::toString()
 {
-    return "Employee:\nName=" + getName() + "\nSurname=" + getSurname() + "\nAge=" + std::to_string(getAge()) + "\nPesel=" +getPesel() + "\nCard_number=" + getCardNumber() + "\nPosition=" + getPosition();
+    return "Employee:Name=" + getName() + ",Surname=" + getSurname() + ",Pesel=" +getPesel() + ",Age=" + std::to_string(getAge()) +  ",Card_number=" + getCardNumber() + ",Position=" + getPosition();
 }
