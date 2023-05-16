@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Person.h"
+#include "Identifiable.h"
 #include <vector>
 #include <fstream>
 #include <sstream>
@@ -9,13 +10,13 @@ using namespace std;
 class PersonVector
 {
     protected:
-        vector<Person> personVector;
+        vector<Person*> personVector;
     public:
         /*
          * Method to add a person to the vector
          * @param Person person to add
          */
-        void addPerson(Person person);
+        void addPerson(Person* person);
 
 
         /*
@@ -48,14 +49,14 @@ class PersonVector
          * Method to remove a person from the vector
          * @param Person person to remove
          */
-        void removePerson(Person person);
+        void removePerson(Person* person);
 
         /*
          * Method to get a person from the vector
          * @param int index of the person in the vector
          * @return Person person from the vector
          */
-        Person getPersonById(int index);
+        Person* getPersonById(int index);
 
 
         /*

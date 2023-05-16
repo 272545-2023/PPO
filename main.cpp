@@ -6,7 +6,7 @@
 
 using namespace std;
 
-PersonVector people;
+PersonVector *people;
 
 void showStudentMenu()
 {
@@ -95,8 +95,6 @@ int main()
     bool exit = false;
     while (!exit)
     {
-        //make a new menu that can handle both students and employees
-        //use a polymorpihsm to store both students and employees in the same vector as Person objects
 
         cout << endl << "__MENU__" << endl;
         cout << "1. Student menu" << endl;
@@ -106,7 +104,8 @@ int main()
         cout << "5. Exit" << endl;
         int choice;
         cin >> choice;
-        Person p;
+        Person *p = nullptr;
+        Student st = Student();
         switch(choice){
             case 1:
                 showStudentMenu();
@@ -116,55 +115,59 @@ int main()
                 switch (choice)
                 {
                     case 1:
-                        p = addStudent();
-                        people.addPerson(p);
-                        people.printAll();
+                        st = addStudent();
+                        p = &st;
+                        people->addPerson(p);
+                        // people->printAll();
                         break;
-                    case 2:
+                    case 2:{
                         cout << "Index: ";
                         int index;
                         cin >> index;
-                        cout << people.getPersonById(index).toString() << endl;
+                        Student* s = (Student*)people->getPersonById(index);
+                        cout << s->toString() << endl;
                         break;
+                    }
+
                     case 3:
-                        cout << "Number of students: " << people.getStudentCount() << endl;
+                        cout << "Number of students: " << people->getStudentCount() << endl;
                         break;
                     default:
                         cout << "Invalid choice" << endl;
                         break;
                 }
                 break;
+            // case 2:
+            //     showEmployeeMenu();
+            //     cout << "Choice: ";
+            //     cin >> choice;
+            //     switch (choice)
+            //     {
+            //         case 1:
+            //             p = addEmployee();
+            //             people.addPerson(p);
+            //             people.printAll();
+            //             break;
+            //         case 2:
+            //             cout << "Index: ";
+            //             int index;
+            //             cin >> index;
+            //             cout << people.getPersonById(index).toString() << endl;
+            //             break;
+            //         case 3:
+            //             cout << "Number of employees: " << people.getEmployeeCount() << endl;
+            //             break;
+            //         default:
+            //             cout << "Invalid choice" << endl;
+            //             break;
+            //     }
+            // case 3:
+            //     people.saveToFile();
+            //     break;
+            // case 4:
+            //     people.loadFromFile();
+            //     break;
             case 2:
-                showEmployeeMenu();
-                cout << "Choice: ";
-                cin >> choice;
-                switch (choice)
-                {
-                    case 1:
-                        p = addEmployee();
-                        people.addPerson(p);
-                        people.printAll();
-                        break;
-                    case 2:
-                        cout << "Index: ";
-                        int index;
-                        cin >> index;
-                        cout << people.getPersonById(index).toString() << endl;
-                        break;
-                    case 3:
-                        cout << "Number of employees: " << people.getEmployeeCount() << endl;
-                        break;
-                    default:
-                        cout << "Invalid choice" << endl;
-                        break;
-                }
-            case 3:
-                people.saveToFile();
-                break;
-            case 4:
-                people.loadFromFile();
-                break;
-            case 5:
                 exit = true;
                 break;
             default:
